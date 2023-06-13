@@ -1,6 +1,19 @@
 button{
     cursor: pointer;
-    padding: .5rem;
-    font-weight: 600;
-    color: #ddd;
+    padding: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    background: transparent;
+    color: green;
+    border: .2em solid green;
+    border-radius: 100px;
+    transition: 1s ease;
+    font-weight: 900;
+}
+button:hover{
+    background: green;
+    color: #111;
+}
+button:active{
+    scale: .9;
 }

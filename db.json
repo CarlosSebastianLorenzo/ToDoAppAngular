@@ -22,7 +22,7 @@
       "id": 4,
       "text": "Iniciar Portfolios",
       "day": "Julio 01 a las 18:00",
-      "reminder": false
+      "reminder": true
     }
   ]
 }

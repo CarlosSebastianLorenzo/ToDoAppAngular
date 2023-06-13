@@ -1,0 +1,31 @@
+.taskItem{
+    background: #333;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em;
+    padding-left: 2em;
+    padding-right: 2em;
+    margin: .5em;
+}
+.reminder{
+    border-left: .5em solid limegreen;
+}
+button{
+    cursor: pointer;
+    padding-left: 2em;
+    padding-right: 2em;
+    background: transparent;
+    color: red;
+    border: .2em solid red;
+    border-radius: 100px;
+    transition: 1s ease;
+    font-weight: 900;
+}
+button:hover{
+    background: red;
+    color: #ddd;
+}
+button:active{
+    scale: .9;
+}
