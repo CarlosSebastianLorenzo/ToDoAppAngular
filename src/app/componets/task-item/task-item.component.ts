@@ -10,6 +10,7 @@ import { TASKS } from 'src/app/mock-tasks';
 export class TaskItemComponent implements OnInit {
   @Input() task: Task = TASKS[0];
   @Output() onDeleteTask: EventEmitter<Task> = new EventEmitter();
+  @Output() onToggleTask: EventEmitter<Task> = new EventEmitter();
   
   constructor() { }
 
@@ -18,5 +19,9 @@ export class TaskItemComponent implements OnInit {
 
   onDelete(task: Task): void {
     this.onDeleteTask.emit(task);
+  }
+
+  onToggleReminder(task: Task): void {
+    this.onToggleTask.emit(task);
   }
 }

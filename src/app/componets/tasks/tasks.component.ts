@@ -27,4 +27,11 @@ export class TasksComponent implements OnInit {
     });
   }
 
+  toggleReminder(task: Task): void {
+    task.reminder = !task.reminder;
+    this.taskService.updateTaskReminder(task).subscribe(()=>{
+      console.log("el reminder de la tarea "+ task.id +" cambió a "+task.reminder);
+    });
+  }
+
 }

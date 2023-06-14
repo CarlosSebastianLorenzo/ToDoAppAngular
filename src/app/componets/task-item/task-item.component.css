@@ -7,6 +7,7 @@
     padding-left: 2em;
     padding-right: 2em;
     margin: .5em;
+    cursor: pointer;
 }
 .reminder{
     border-left: .5em solid limegreen;

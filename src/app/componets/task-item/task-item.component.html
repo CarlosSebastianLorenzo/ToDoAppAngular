@@ -1,4 +1,8 @@
-<div class="taskItem" [ngClass]="{reminder : task.reminder}">
+<div 
+class="taskItem" 
+[ngClass]="{reminder : task.reminder}"
+(click)="onToggleReminder(task)"
+>
     <div>
         <h2>{{task.text}}</h2>
         <p>{{task.day}}</p>
