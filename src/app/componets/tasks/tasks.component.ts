@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TASKS } from 'src/app/mock-tasks';
 import { TaskService } from 'src/app/services/task.service';
 import { Task } from 'src/app/Task';
 
@@ -8,7 +9,11 @@ import { Task } from 'src/app/Task';
   styleUrls: ['./tasks.component.css']
 })
 export class TasksComponent implements OnInit {
-
+  // newTask: Task = {
+  //   text: "",
+  //   day: "",
+  //   reminder: false
+  // };
   tasks: Task[] = [];
 
   constructor(
@@ -34,4 +39,9 @@ export class TasksComponent implements OnInit {
     });
   }
 
+  addNewTask(newTask:Task): void {
+    this.taskService.createTask(newTask).subscribe((task)=>{
+      this.tasks.push(task);
+    });
+  }
 }
