@@ -3,5 +3,6 @@
     <app-add-task-button
         text="ADD TASK"
         (btnClick)="toggleAddTask()"
+        *ngIf = "hasRoute('/')"
     ></app-add-task-button>
 </header>
