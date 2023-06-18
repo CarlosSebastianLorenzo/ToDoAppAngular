@@ -1,3 +1,56 @@
-.hide{
-    display: none;
+fieldset{
+    border: none;
+    display: flex;
+    flex-direction: column;
+    padding: .5em;
+    gap: .5em;
+}
+fieldset:has(>input[type="checkbox"]){
+    flex-direction: row;
+}
+input { 
+    background-color:#555555;
+    border:solid 2px #333333;
+    font-size:15px;
+    color:#DDDDDD;
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;
+    border-radius:8px;
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-left:10px;
+    padding-right:10px;
+}
+label {
+    font-size:1.2em;
+    color:#DDDDDD;
+    font-weight:bold;
+    padding-top:2px;
+    padding-bottom:2px;
+}
+input[type="submit"] {
+    background-color:#333333;
+    border:solid 2px #AAAAAA;
+    font-size:16px;
+    color:#DDDDDD;
+    font-weight:bold;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-right:50px;
+    padding-left:50px;
+    -moz-border-radius:15px;
+    -webkit-border-radius:15px;
+    border-radius:15px;
+    cursor: pointer;
+    width: 100%;
+    transition: 1s ease;
+}
+input[type="submit"]:hover{
+    background: #444444;
+    color: #fff;
+}
+input[type="submit"]:active{
+    font-size: 14px;
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
