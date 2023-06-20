@@ -1,10 +1,17 @@
+<div cdkDropList
+#ln1="cdkDropList"
+[cdkDropListData]="tasks"
+(cdkDropListDropped)="drop($event)"
+>
 <app-add-task
     (addNewTask)="addNewTask($event)"
 ></app-add-task>
 <app-task-item
+    cdkDrag
     *ngFor="let task of tasks"
     [task]="task"
     (onDeleteTask)="deleteTask(task)"
     (onToggleTask)="toggleReminder(task)"
 >
 </app-task-item>
+</div>

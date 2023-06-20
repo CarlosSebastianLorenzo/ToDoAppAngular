@@ -1,3 +1,4 @@
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
 import { TASKS } from 'src/app/mock-tasks';
 import { TaskService } from 'src/app/services/task.service';
@@ -17,7 +18,7 @@ export class TasksComponent implements OnInit {
   tasks: Task[] = [];
 
   constructor(
-    private taskService: TaskService
+    private taskService: TaskService,
   ) { }
 
   ngOnInit(): void {
@@ -44,4 +45,13 @@ export class TasksComponent implements OnInit {
       this.tasks.push(task);
     });
   }
+
+  drop($event: CdkDragDrop<Task[]>) {
+    moveItemInArray(
+      $event.container.data,
+      $event.previousIndex,
+      $event.currentIndex
+    );
+  }
+
 }
