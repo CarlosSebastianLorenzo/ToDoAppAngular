@@ -1,4 +1,4 @@
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
 import { TASKS } from 'src/app/mock-tasks';
 import { TaskService } from 'src/app/services/task.service';
@@ -47,20 +47,29 @@ export class TasksComponent implements OnInit {
   }
 
   drop($event: CdkDragDrop<Task[]>) {
-    moveItemInArray(
+    if($event.previousContainer === $event.container){
+      moveItemInArray(
       $event.container.data,
       $event.previousIndex,
       $event.currentIndex
-    );
-    let newTasks = this.tasks
-    this.tasks.forEach((task)=>{
-      this.taskService.deleteTask(task).subscribe();
-    })
-    newTasks.forEach((task)=>{
-      this.taskService.createTask(task).subscribe((task)=>{
-        this.tasks.push(task);
-      });
-    });
+      );
+    } else {
+      transferArrayItem(
+        $event.previousContainer.data,
+        $event.container.data,
+        $event.previousIndex,
+        $event.currentIndex
+      );
+    }
+    // let newTasks = this.tasks
+    // this.tasks.forEach((task)=>{
+    //   this.taskService.deleteTask(task).subscribe();
+    // })
+    // newTasks.forEach((task)=>{
+    //   this.taskService.createTask(task).subscribe((task)=>{
+    //     this.tasks.push(task);
+    //   });
+    // });
   }
 
 }
