@@ -61,15 +61,15 @@ export class TasksComponent implements OnInit {
         $event.currentIndex
       );
     }
-    // let newTasks = this.tasks
-    // this.tasks.forEach((task)=>{
-    //   this.taskService.deleteTask(task).subscribe();
-    // })
-    // newTasks.forEach((task)=>{
-    //   this.taskService.createTask(task).subscribe((task)=>{
-    //     this.tasks.push(task);
-    //   });
-    // });
+    let newTasks = this.tasks
+    this.tasks.forEach((task)=>{
+      this.taskService.deleteTask(task).subscribe();
+    })
+    newTasks.forEach((task)=>{
+      this.taskService.createTask(task).subscribe((task)=>{
+        this.tasks.push(task);
+      });
+    });
   }
 
 }
